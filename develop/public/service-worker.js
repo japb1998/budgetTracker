@@ -1,9 +1,9 @@
 const FILES_TO_CACHE = [
   '/',
   '/index.html',
-  '/style.css',
-  '/dist/app.bundle.js',
-  '/dist/favorites.bundle.js',
+  '/styles.css',
+  '/dist/bundle.js',
+  '/icons/icon-512x512.png',
   'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
   'https://cdn.jsdelivr.net/npm/chart.js@2.8.0',
 ];
@@ -54,7 +54,7 @@ self.addEventListener("fetch", event => {
   }
 
   // handle runtime GET requests for data from /api routes
-  if (event.request.url.includes("/api/transaction")) {
+  if (event.request.url.includes("/api")) {
     // make network request and fallback to cache if network request fails (offline)
     event.respondWith(
       caches.open(RUNTIME_CACHE).then(cache => {
