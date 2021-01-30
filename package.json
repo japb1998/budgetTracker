@@ -5,8 +5,9 @@
         "node": "15.6.0"
       },
     "description": "",
-    "main": "index.js",
+    "main": "server.js",
     "scripts": {
+        "start":"node server.js",
         "build": "webpack",
         "prestart": "npm run webpack",
         "seed": "node seeders/seed.js"
